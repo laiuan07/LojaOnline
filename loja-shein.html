@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DRIP — Moda que fala por você</title>
+<meta name="description" content="Curadoria de moda jovem e descolada. Peças únicas com preços que cabem no bolso — via afiliados Shein.">
+<meta property="og:title" content="DRIP — Moda que fala por você">
+<meta property="og:description" content="Curadoria de moda jovem. Peças únicas, preços acessíveis.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ─── RESET & BASE ─────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:'Inter',sans-serif;background:#7B9CAD;color:#fff;overflow-x:hidden}
+
+/* ─── VARIABLES ────────────────────────────── */
+:root{
+  --bg:        #7B9CAD;
+  --bg-mid:    #5A7F94;
+  --bg-dark:   #2B4355;
+  --bg-deep:   #17293580;
+  --bg-deeper: #0F1E28;
+  --card:      rgba(255,255,255,0.07);
+  --card-hover:rgba(255,255,255,0.13);
+  --border:    rgba(255,255,255,0.14);
+  --border2:   rgba(255,255,255,0.25);
+  --w:         #FFFFFF;
+  --w70:       rgba(255,255,255,0.70);
+  --w45:       rgba(255,255,255,0.45);
+  --w20:       rgba(255,255,255,0.20);
+  --w10:       rgba(255,255,255,0.10);
+  --w05:       rgba(255,255,255,0.05);
+  --font-d:    'Barlow Condensed',sans-serif;
+  --font-b:    'Inter',sans-serif;
+}
+
+/* ─── ANNOUNCEMENT BAR ─────────────────────── */
+.ann-bar{background:var(--bg-deeper);padding:8px 0;overflow:hidden;border-bottom:1px solid var(--border)}
+.ann-track{display:flex;gap:64px;animation:marquee 22s linear infinite;white-space:nowrap;width:max-content}
+.ann-item{font-family:var(--font-d);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--w45);flex-shrink:0}
+.ann-dot{color:var(--w20);margin:0 8px}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ─── NAV ──────────────────────────────────── */
+nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:66px;background:rgba(123,156,173,.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--font-d);font-weight:900;font-size:26px;letter-spacing:.1em;text-transform:uppercase;color:var(--w);text-decoration:none;cursor:pointer}
+.nav-menu{display:flex;gap:2px;list-style:none}
+.nav-menu a{font-family:var(--font-d);font-weight:700;font-size:13px;letter-spacing:.08em;color:var(--w45);text-decoration:none;padding:6px 12px;border:1px solid transparent;transition:all .2s;text-transform:uppercase}
+.nav-menu a:hover,.nav-menu a.active{color:var(--w);border-color:var(--border);background:var(--w05)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.nav-btn{width:38px;height:38px;border:1px solid var(--border);background:var(--w05);display:flex;align-items:center;justify-content:center;cursor:pointer;border-radius:4px;transition:all .2s;position:relative}
+.nav-btn:hover{background:var(--w20);border-color:var(--border2)}
+.nav-btn svg{width:16px;height:16px;stroke:var(--w70);stroke-width:1.6;fill:none}
+.cart-badge{position:absolute;top:-5px;right:-5px;width:18px;height:18px;background:var(--w);border-radius:50%;font-family:var(--font-d);font-size:11px;font-weight:800;color:var(--bg-dark);display:flex;align-items:center;justify-content:center}
+.nav-cta{font-family:var(--font-d);font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--bg-deeper);background:var(--w);border:none;padding:9px 22px;cursor:pointer;transition:all .2s}
+.nav-cta:hover{background:var(--w70)}
+
+/* ─── HERO ─────────────────────────────────── */
+.hero{position:relative;min-height:calc(100vh - 106px);display:flex;flex-direction:column;justify-content:center;padding:64px 48px;overflow:hidden;background:linear-gradient(140deg,#5A7F94 0%,#7B9CAD 50%,#8AAFC0 100%)}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 65% 40%,rgba(255,255,255,.06) 0%,transparent 70%)}
+.hero-bread{display:flex;gap:8px;margin-bottom:36px;position:relative;z-index:2}
+.bread-tag{font-family:var(--font-d);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--w45);border:1px solid var(--border);padding:3px 12px}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr 1fr .85fr;gap:48px;align-items:center;max-width:1400px}
+.hero-left{}
+.hero-badge-anim{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-d);font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--bg-deeper);background:var(--w);padding:5px 14px;margin-bottom:20px;animation:pulse-badge 2.5s ease-in-out infinite}
+@keyframes pulse-badge{0%,100%{opacity:1}50%{opacity:.7}}
+.hero-badge-anim::before{content:'⚡';font-size:13px}
+.hero-title{font-family:var(--font-d);font-weight:900;font-size:clamp(54px,6.5vw,92px);line-height:.92;text-transform:uppercase;letter-spacing:-.01em;margin-bottom:22px}
+.hero-title em{font-style:italic;color:var(--w70)}
+.hero-desc{font-size:15px;color:var(--w70);line-height:1.7;max-width:380px;margin-bottom:32px}
+.hero-sizes{margin-bottom:20px}
+.label-sm{font-family:var(--font-d);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--w45);margin-bottom:8px}
+.size-row{display:flex;gap:10px}
+.sz{font-family:var(--font-d);font-weight:700;font-size:15px;letter-spacing:.06em;background:none;border:none;color:var(--w45);cursor:pointer;padding:4px 6px;transition:color .15s;text-transform:uppercase}
+.sz:hover,.sz.active{color:var(--w);text-decoration:underline;text-underline-offset:4px}
+.colour-row{display:flex;gap:14px;margin-top:12px}
+.cl{font-family:var(--font-d);font-weight:700;font-size:15px;background:none;border:none;color:var(--w45);cursor:pointer;padding:0;transition:color .15s}
+.cl.active{color:var(--w);text-decoration:underline;text-underline-offset:4px}
+.hero-ctas{display:flex;align-items:center;gap:18px;margin-top:28px;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-d);font-weight:800;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--bg-deeper);background:var(--w);border:none;padding:13px 28px;cursor:pointer;transition:all .2s}
+.btn-primary:hover{background:var(--w70);transform:translateY(-2px)}
+.btn-outline{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-d);font-weight:800;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--w);background:none;border:1px solid var(--border2);padding:12px 24px;cursor:pointer;transition:all .2s}
+.btn-outline:hover{background:var(--w10);border-color:var(--w)}
+.hero-price{font-family:var(--font-d);font-weight:700;font-size:24px;letter-spacing:.04em;color:var(--w)}
+.hero-stats{display:flex;gap:24px;margin-top:32px;flex-wrap:wrap}
+.stat-item{display:flex;flex-direction:column;gap:3px}
+.stat-val{font-family:var(--font-d);font-weight:900;font-size:20px;letter-spacing:.02em;color:var(--w)}
+.stat-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--w45)}
+
+/* Hero center image */
+.hero-img-wrap{display:flex;justify-content:center;align-items:flex-end}
+.hero-img{width:300px;height:420px;background:linear-gradient(155deg,#A5C3D0 0%,#85ADBE 40%,#6495AA 100%);position:relative;overflow:hidden;border-radius:2px}
+.hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(23,41,53,.5) 0%,transparent 55%)}
+.hero-img-inner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:transform .5s ease}
+.hero-img:hover .hero-img-inner{transform:scale(1.04)}
+.product-svg{opacity:.9}
+
+/* Hero right thumbnails */
+.hero-thumbs{display:flex;flex-direction:column;gap:14px}
+.hero-thumb{width:118px;height:158px;background:linear-gradient(155deg,#B0CCDA 0%,#8CAFC0 100%);border:1px solid transparent;cursor:pointer;transition:all .2s;position:relative;overflow:hidden;border-radius:2px}
+.hero-thumb.active,.hero-thumb:hover{border-color:var(--border2)}
+.thumb-inner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.thumb-counter{font-family:var(--font-d);font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--w45);margin-top:8px;display:flex;gap:8px;align-items:center}
+.socials{display:flex;gap:8px;margin-top:14px}
+.soc-btn{width:30px;height:30px;border:1px solid var(--border);background:var(--w05);display:flex;align-items:center;justify-content:center;cursor:pointer;border-radius:3px;transition:all .2s}
+.soc-btn:hover{background:var(--w20)}
+.soc-btn svg{width:12px;height:12px;fill:var(--w45)}
+
+/* ─── CATEGORIES ───────────────────────────── */
+.section-cats{padding:70px 48px;background:var(--bg-dark)}
+.sec-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:36px}
+.sec-tag{font-family:var(--font-d);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--w45);margin-bottom:8px}
+.sec-title{font-family:var(--font-d);font-weight:900;font-size:clamp(36px,4vw,54px);text-transform:uppercase;letter-spacing:-.01em;line-height:1}
+.sec-link{font-family:var(--font-d);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--w70);text-decoration:none;border-bottom:1px solid var(--border2);padding-bottom:2px;transition:color .2s}
+.sec-link:hover{color:var(--w)}
+.cats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cat-card{position:relative;aspect-ratio:4/5;overflow:hidden;cursor:pointer;border-radius:2px;background:linear-gradient(155deg,#7FADC0 0%,#587E94 100%)}
+.cat-card:nth-child(2){background:linear-gradient(155deg,#4A6D84 0%,#2C4A5D 100%)}
+.cat-card:nth-child(3){background:linear-gradient(155deg,#92B5C5 0%,#6D9AAD 100%)}
+.cat-card:nth-child(4){background:linear-gradient(155deg,#3A5C72 0%,#213E50 100%)}
+.cat-img{position:absolute;inset:0;transition:transform .5s ease;display:flex;align-items:center;justify-content:center}
+.cat-card:hover .cat-img{transform:scale(1.05)}
+.cat-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,30,40,.75) 0%,rgba(15,30,40,.1) 55%,transparent 100%)}
+.cat-info{position:absolute;bottom:20px;left:20px;right:20px}
+.cat-name{font-family:var(--font-d);font-weight:900;font-size:24px;text-transform:uppercase;letter-spacing:.02em;line-height:1;margin-bottom:6px}
+.cat-cta{font-family:var(--font-d);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--w70)}
+.cat-cta::after{content:' →'}
+
+/* ─── PRODUCTS TRENDING ────────────────────── */
+.section-trending{padding:70px 48px;background:var(--bg)}
+.products-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.prod-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.prod-card:hover .prod-img img{transform:scale(1.05)}
+.prod-card{cursor:pointer;position:relative;overflow:hidden}
+.prod-img{width:100%;aspect-ratio:3/4;position:relative;overflow:hidden;border-radius:2px}
+.prod-img-bg{position:absolute;inset:0;transition:transform .45s ease;display:flex;align-items:center;justify-content:center}
+.prod-card:hover .prod-img-bg{transform:scale(1.05)}
+.prod-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,30,40,.55) 0%,transparent 50%)}
+.prod-badge{position:absolute;top:10px;left:10px;font-family:var(--font-d);font-weight:800;font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:var(--w);color:var(--bg-deeper);padding:3px 9px;border-radius:1px}
+.prod-badge.sale{background:#EF4444;color:#fff}
+.prod-fav{position:absolute;top:10px;right:10px;width:32px;height:32px;background:var(--w10);border:1px solid var(--border);border-radius:3px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;opacity:0}
+.prod-card:hover .prod-fav{opacity:1}
+.prod-fav:hover{background:var(--w20)}
+.prod-fav svg{width:14px;height:14px;stroke:var(--w);stroke-width:1.8;fill:none}
+.prod-info{padding:12px 0 6px}
+.prod-name{font-family:var(--font-d);font-weight:800;font-size:14px;letter-spacing:.05em;text-transform:uppercase;color:var(--w);margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.prod-cat{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--w45);margin-bottom:8px}
+.prod-colors{display:flex;gap:6px;margin-bottom:7px;align-items:center}
+.c-dot{width:10px;height:10px;border-radius:50%;border:1px solid var(--border2)}
+.prod-prices{display:flex;align-items:center;gap:10px}
+.prod-price{font-family:var(--font-d);font-weight:800;font-size:16px;color:var(--w)}
+.prod-old{font-family:var(--font-d);font-size:13px;color:var(--w45);text-decoration:line-through}
+.prod-discount{font-family:var(--font-d);font-weight:700;font-size:11px;color:#EF4444;letter-spacing:.06em}
+.prod-cta-wrap{overflow:hidden;height:0;transition:height .25s ease}
+.prod-card:hover .prod-cta-wrap{height:38px}
+.btn-add-prod{width:100%;font-family:var(--font-d);font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--bg-deeper);background:var(--w);border:none;padding:9px;cursor:pointer;transition:all .2s;margin-top:8px}
+.btn-add-prod:hover{background:var(--w70)}
+
+/* ─── PROMO BANNER ─────────────────────────── */
+.section-promo{position:relative;padding:90px 48px;background:var(--bg-dark);overflow:hidden;text-align:center}
+.section-promo::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(255,255,255,.05) 0%,transparent 65%)}
+.promo-tag{font-family:var(--font-d);font-weight:800;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--w45);margin-bottom:14px}
+.promo-title{font-family:var(--font-d);font-weight:900;font-size:clamp(56px,8vw,110px);text-transform:uppercase;letter-spacing:-.02em;line-height:.9;margin-bottom:18px}
+.promo-sub{font-size:16px;color:var(--w70);margin-bottom:32px;letter-spacing:.04em}
+.countdown{display:flex;gap:16px;justify-content:center;margin-bottom:36px;flex-wrap:wrap}
+.cd-block{display:flex;flex-direction:column;align-items:center;gap:4px}
+.cd-num{font-family:var(--font-d);font-weight:900;font-size:52px;line-height:1;letter-spacing:-.02em;color:var(--w)}
+.cd-label{font-family:var(--font-d);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--w45)}
+.cd-sep{font-family:var(--font-d);font-weight:900;font-size:52px;color:var(--w20);line-height:1;align-self:flex-start;padding-top:2px}
+.promo-coupon{display:inline-block;font-family:var(--font-d);font-weight:800;font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--bg-deeper);background:var(--w);padding:6px 18px;margin-bottom:28px}
+
+/* ─── WHY US ───────────────────────────────── */
+.section-why{padding:70px 48px;background:var(--bg-mid)}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:48px}
+.why-card{text-align:center;padding:36px 24px;background:var(--w05);border:1px solid var(--border);border-radius:2px;transition:all .3s}
+.why-card:hover{background:var(--card-hover);border-color:var(--border2);transform:translateY(-4px)}
+.why-icon{width:52px;height:52px;background:var(--w10);border:1px solid var(--border2);border-radius:4px;display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.why-icon svg{width:24px;height:24px;stroke:var(--w);stroke-width:1.6;fill:none}
+.why-name{font-family:var(--font-d);font-weight:800;font-size:18px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px}
+.why-desc{font-size:13px;color:var(--w70);line-height:1.6}
+
+/* ─── NEWSLETTER ───────────────────────────── */
+.section-news{padding:80px 48px;background:var(--bg-dark);text-align:center}
+.news-gift{font-family:var(--font-d);font-size:14px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--w70);margin-bottom:12px}
+.news-title{font-family:var(--font-d);font-weight:900;font-size:clamp(40px,5vw,68px);text-transform:uppercase;letter-spacing:-.01em;line-height:.95;margin-bottom:16px}
+.news-sub{font-size:15px;color:var(--w70);line-height:1.7;max-width:460px;margin:0 auto 36px}
+.news-form{display:flex;gap:0;max-width:480px;margin:0 auto 16px}
+.news-input{flex:1;background:var(--w05);border:1px solid var(--border2);border-right:none;padding:14px 18px;color:var(--w);font-family:var(--font-b);font-size:14px;outline:none;transition:border-color .2s}
+.news-input::placeholder{color:var(--w45)}
+.news-input:focus{border-color:var(--w)}
+.news-btn{font-family:var(--font-d);font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--bg-deeper);background:var(--w);border:none;padding:14px 26px;cursor:pointer;transition:all .2s;white-space:nowrap}
+.news-btn:hover{background:var(--w70)}
+.news-note{font-size:12px;color:var(--w45);letter-spacing:.06em}
+.news-note strong{color:var(--w70)}
+
+/* ─── BIG TYPE SECTION ─────────────────────── */
+.section-bigtype{position:relative;padding:0;background:var(--bg-deeper);overflow:hidden}
+.bigtype-bg{position:absolute;inset:0;background:linear-gradient(180deg,#172935 0%,#0F1E28 100%)}
+.bigtype-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 80%,rgba(90,127,148,.18) 0%,transparent 60%)}
+.bigtype-text{position:relative;z-index:2;font-family:var(--font-d);font-weight:900;font-size:clamp(72px,14vw,200px);text-transform:uppercase;letter-spacing:-.03em;line-height:.88;color:rgba(255,255,255,.08);text-align:center;padding:50px 0 20px;user-select:none}
+.bigtype-sub{position:relative;z-index:2;text-align:center;padding-bottom:60px}
+.bigtype-models{position:relative;z-index:3;display:flex;justify-content:center;gap:20px;padding-bottom:0;margin-top:-30px}
+.model-block{border-radius:3px 3px 0 0}
+
+/* ─── FOOTER ───────────────────────────────── */
+footer{background:var(--bg-deeper);border-top:1px solid var(--border);padding:56px 48px 28px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid var(--border);margin-bottom:24px}
+.footer-brand{font-family:var(--font-d);font-weight:900;font-size:30px;letter-spacing:.08em;text-transform:uppercase;color:var(--w);margin-bottom:14px}
+.footer-bio{font-size:13px;color:var(--w45);line-height:1.7;max-width:240px;margin-bottom:18px}
+.footer-badge{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-d);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--w45);border:1px solid var(--border);padding:4px 12px;margin-right:6px}
+.footer-col-title{font-family:var(--font-d);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--w45);margin-bottom:18px;border-bottom:1px solid var(--border);padding-bottom:10px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--w45);text-decoration:none;transition:color .15s}
+.footer-links a:hover{color:var(--w)}
+.footer-socials{display:flex;gap:8px;margin-bottom:18px}
+.footer-soc{width:36px;height:36px;border:1px solid var(--border);background:var(--w05);display:flex;align-items:center;justify-content:center;cursor:pointer;border-radius:3px;transition:all .2s}
+.footer-soc:hover{background:var(--w10);border-color:var(--border2)}
+.footer-soc svg{width:14px;height:14px;fill:var(--w45);transition:fill .15s}
+.footer-soc:hover svg{fill:var(--w70)}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:gap}
+.footer-copy{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--w20)}
+.footer-affiliate{font-size:11px;color:var(--w20);letter-spacing:.04em}
+
+/* ─── ANIMATIONS ───────────────────────────── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
+
+/* ─── MOBILE ───────────────────────────────── */
+@media(max-width:1024px){
+  nav{padding:0 24px}
+  .nav-menu{display:none}
+  .hero{padding:48px 24px}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-img-wrap,.hero-thumbs{display:none}
+  .section-cats,.section-trending,.section-promo,.section-why,.section-news,footer{padding:48px 24px}
+  .cats-grid{grid-template-columns:repeat(2,1fr)}
+  .products-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .bigtype-models{display:none}
+}
+@media(max-width:600px){
+  .ann-bar{display:none}
+  .hero-title{font-size:52px}
+  .products-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .cats-grid{gap:12px}
+  .why-grid{grid-template-columns:1fr}
+  .news-form{flex-direction:column}
+  .news-input{border-right:1px solid var(--border2);border-bottom:none}
+  .news-btn{border-top:none}
+  .footer-grid{grid-template-columns:1fr}
+  .countdown{gap:10px}
+  .cd-num{font-size:38px}
+  .footer-bottom{flex-direction:column;gap:12px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ─── ANNOUNCEMENT BAR ─────────────── -->
+<div class="ann-bar">
+  <div class="ann-track">
+    <span class="ann-item">Frete grátis acima de R$199<span class="ann-dot">·</span></span>
+    <span class="ann-item">Cupom primeira compra: <strong>NOVO15</strong><span class="ann-dot">·</span></span>
+    <span class="ann-item">Troca grátis em 30 dias<span class="ann-dot">·</span></span>
+    <span class="ann-item">Pague em até 6x sem juros<span class="ann-dot">·</span></span>
+    <span class="ann-item">Frete grátis acima de R$199<span class="ann-dot">·</span></span>
+    <span class="ann-item">Cupom primeira compra: <strong>NOVO15</strong><span class="ann-dot">·</span></span>
+    <span class="ann-item">Troca grátis em 30 dias<span class="ann-dot">·</span></span>
+    <span class="ann-item">Pague em até 6x sem juros<span class="ann-dot">·</span></span>
+  </div>
+</div>
+
+<!-- ─── NAV ──────────────────────────── -->
+<nav>
+  <a class="nav-logo" href="#">DRIP.</a>
+  <ul class="nav-menu">
+    <li><a href="#" class="active">[ NEW IN ]</a></li>
+    <li><a href="#">[ FEMININO ]</a></li>
+    <li><a href="#">[ MASCULINO ]</a></li>
+    <li><a href="#">[ BELEZA ]</a></li>
+    <li><a href="#">[ ACESSÓRIOS ]</a></li>
+    <li><a href="#promo">[ SALE ]</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="nav-btn" aria-label="Carrinho">
+      <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      <span class="cart-badge">0</span>
+    </button>
+    <button class="nav-cta">Entrar</button>
+  </div>
+</nav>
+
+<!-- ─── HERO ──────────────────────────── -->
+<section class="hero">
+  <div class="hero-bread">
+    <span class="bread-tag">[ NOVA COLEÇÃO ]</span>
+    <span class="bread-tag">[ DESTAQUE ]</span>
+  </div>
+  <div class="hero-grid">
+
+    <!-- Left: info -->
+    <div class="hero-left reveal">
+      <div class="hero-badge-anim">New Drop</div>
+      <h1 class="hero-title">
+        MODA QUE<br>
+        <em>FALA POR</em><br>
+        VOCÊ.
+      </h1>
+      <p class="hero-desc">Peças únicas selecionadas a dedo — preços que cabem no bolso, atitude que faz a diferença. Curadoria exclusiva via afiliados Shein.</p>
+
+      <div class="hero-sizes">
+        <div class="label-sm">Tamanho</div>
+        <div class="size-row">
+          <button class="sz">PP</button>
+          <button class="sz active">P</button>
+          <button class="sz">M</button>
+          <button class="sz">G</button>
+          <button class="sz">GG</button>
+        </div>
+      </div>
+      <div>
+        <div class="label-sm" style="margin-top:14px">Cor</div>
+        <div class="colour-row">
+          <button class="cl active">PRETO</button>
+          <button class="cl">BRANCO</button>
+          <button class="cl">AZUL</button>
+        </div>
+      </div>
+
+      <div class="hero-ctas">
+        <button class="btn-primary" onclick="trackClick('hero-cta')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13,2 3,14 12,14 11,22 21,10 12,10"/></svg>
+          Comprar Agora
+        </button>
+        <button class="btn-outline" onclick="document.getElementById('colecoes').scrollIntoView({behavior:'smooth'})">Ver Coleções →</button>
+        <span class="hero-price">R$ 89,90</span>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-val">+50K</span>
+          <span class="stat-label">Peças</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-val">24h</span>
+          <span class="stat-label">Envio Rápido</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-val">30d</span>
+          <span class="stat-label">Troca Grátis</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-val">6x</span>
+          <span class="stat-label">Sem Juros</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Center: product image -->
+    <div class="hero-img-wrap reveal reveal-delay-1">
+      <div class="hero-img">
+        <div class="hero-img-inner">
+          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=300&h=420&fit=crop&auto=format" alt="Modelo DRIP" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top">
+        </div>
+        <div class="hero-img-inner" style="background:linear-gradient(0deg,rgba(15,30,40,.5) 0%,transparent 55%);pointer-events:none"></div>
+        <div style="position:absolute;bottom:14px;left:16px;font-family:var(--font-d);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45)">COLEÇÃO OUTONO · PRETO</div>
+      </div>
+    </div>
+
+    <!-- Right: thumbnails -->
+    <div class="hero-thumbs reveal reveal-delay-2">
+      <div style="font-family:var(--font-d);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--w20);margin-bottom:10px;max-width:130px;line-height:1.5">CADA PEÇA FOI ESCOLHIDA PRA VOCÊ.</div>
+      <div class="hero-thumb active" style="background:none">
+        <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=118&h=158&fit=crop&auto=format" alt="Look 1" style="width:100%;height:100%;object-fit:cover;object-position:top">
+      </div>
+      <div class="hero-thumb" style="background:none">
+        <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=118&h=158&fit=crop&auto=format" alt="Look 2" style="width:100%;height:100%;object-fit:cover;object-position:top">
+      </div>
+      <div class="thumb-counter">
+        <span>01</span>
+        <span style="color:var(--w20)">———</span>
+        <span>07</span>
+      </div>
+      <div class="socials">
+        <div class="soc-btn" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/><path d="M12 6.865a5.135 5.135 0 1 0 0 10.27 5.135 5.135 0 0 0 0-10.27zm0 8.468a3.333 3.333 0 1 1 0-6.666 3.333 3.333 0 0 1 0 6.666zm5.338-9.87a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/></svg>
+        </div>
+        <div class="soc-btn" aria-label="TikTok">
+          <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.75a8.29 8.29 0 0 0 4.83 1.53V6.82a4.85 4.85 0 0 1-1.06-.13z"/></svg>
+        </div>
+        <div class="soc-btn" aria-label="Pinterest">
+          <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── CATEGORIES ─────────────────────── -->
+<section class="section-cats reveal" id="colecoes">
+  <div class="sec-header">
+    <div>
+      <div class="sec-tag">Explore por categoria</div>
+      <h2 class="sec-title">Descubra seu<br>estilo.</h2>
+    </div>
+    <a href="#" class="sec-link">Ver todas as categorias</a>
+  </div>
+  <div class="cats-grid">
+    <div class="cat-card reveal">
+      <div class="cat-img" style="position:absolute;inset:0">
+        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&h=500&fit=crop&auto=format" alt="Feminino" style="width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s ease">
+      </div>
+      <div class="cat-overlay"></div>
+      <div class="cat-info">
+        <div class="cat-name">Feminino</div>
+        <div class="cat-cta">Ver coleção</div>
+      </div>
+    </div>
+    <div class="cat-card reveal reveal-delay-1">
+      <div class="cat-img" style="position:absolute;inset:0">
+        <img src="https://images.unsplash.com/photo-1516257984-b1b57b5a77da?w=400&h=500&fit=crop&auto=format" alt="Masculino" style="width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s ease">
+      </div>
+      <div class="cat-overlay"></div>
+      <div class="cat-info">
+        <div class="cat-name">Masculino</div>
+        <div class="cat-cta">Ver coleção</div>
+      </div>
+    </div>
+    <div class="cat-card reveal reveal-delay-2">
+      <div class="cat-img" style="position:absolute;inset:0">
+        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400&h=500&fit=crop&auto=format" alt="Beleza" style="width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s ease">
+      </div>
+      <div class="cat-overlay"></div>
+      <div class="cat-info">
+        <div class="cat-name">Beleza</div>
+        <div class="cat-cta">Ver coleção</div>
+      </div>
+    </div>
+    <div class="cat-card reveal reveal-delay-3">
+      <div class="cat-img" style="position:absolute;inset:0">
+        <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=500&fit=crop&auto=format" alt="Acessórios" style="width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .5s ease">
+      </div>
+      <div class="cat-overlay"></div>
+      <div class="cat-info">
+        <div class="cat-name">Acessórios</div>
+        <div class="cat-cta">Ver coleção</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TRENDING PRODUCTS ─────────────── -->
+<section class="section-trending" id="trending">
+  <div class="sec-header reveal">
+    <div>
+      <div class="sec-tag">🔥 Trending</div>
+      <h2 class="sec-title">O que está<br>bombando agora.</h2>
+    </div>
+    <a href="#" class="sec-link">Ver todos →</a>
+  </div>
+  <div class="products-grid">
+
+    <!-- 1 — Bolsa Birkin Preta -->
+    <div class="prod-card reveal">
+      <div class="prod-img" style="background:#d4cfc9;position:relative;overflow:hidden">
+        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&h=530&fit=crop&auto=format" alt="Bolsa Structured Preta" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s ease">
+        <div class="prod-overlay"></div>
+        <span class="prod-badge">NEW</span>
+        <button class="prod-fav" aria-label="Favoritar"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="prod-info">
+        <div class="prod-name">Bolsa Structured</div>
+        <div class="prod-cat">Acessórios · Bolsas</div>
+        <div class="prod-colors">
+          <div class="c-dot" style="background:#1A1A1A"></div>
+          <div class="c-dot" style="background:#C8A870"></div>
+          <div class="c-dot" style="background:#E8E8E8"></div>
+        </div>
+        <div class="prod-prices">
+          <span class="prod-price">R$ 189,90</span>
+          <span class="prod-old">R$ 349,90</span>
+          <span class="prod-discount">-46%</span>
+        </div>
+        <div class="prod-cta-wrap">
+          <button class="btn-add-prod" onclick="trackClick('bolsa-structured')">Comprar na Shein →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 — Blazer Cinza -->
+    <div class="prod-card reveal reveal-delay-1">
+      <div class="prod-img" style="background:#c8ccd0;position:relative;overflow:hidden">
+        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4b4057?w=400&h=530&fit=crop&auto=format" alt="Blazer Cinza" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s ease">
+        <div class="prod-overlay"></div>
+        <span class="prod-badge">HOT</span>
+        <button class="prod-fav" aria-label="Favoritar"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="prod-info">
+        <div class="prod-name">Blazer Oversized</div>
+        <div class="prod-cat">Feminino · Blazers</div>
+        <div class="prod-colors">
+          <div class="c-dot" style="background:#888888"></div>
+          <div class="c-dot" style="background:#1A1A1A"></div>
+          <div class="c-dot" style="background:#C8B89A"></div>
+        </div>
+        <div class="prod-prices">
+          <span class="prod-price">R$ 219,90</span>
+          <span class="prod-old">R$ 389,90</span>
+          <span class="prod-discount">-44%</span>
+        </div>
+        <div class="prod-cta-wrap">
+          <button class="btn-add-prod" onclick="trackClick('blazer-cinza')">Comprar na Shein →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 — Trench Coat Bege -->
+    <div class="prod-card reveal reveal-delay-2">
+      <div class="prod-img" style="background:#d8c9b5;position:relative;overflow:hidden">
+        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400&h=530&fit=crop&auto=format" alt="Trench Coat Bege" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s ease">
+        <div class="prod-overlay"></div>
+        <span class="prod-badge">NEW</span>
+        <button class="prod-fav" aria-label="Favoritar"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="prod-info">
+        <div class="prod-name">Trench Coat Clássico</div>
+        <div class="prod-cat">Feminino · Casacos</div>
+        <div class="prod-colors">
+          <div class="c-dot" style="background:#C8A870"></div>
+          <div class="c-dot" style="background:#1A1A1A"></div>
+        </div>
+        <div class="prod-prices">
+          <span class="prod-price">R$ 299,90</span>
+          <span class="prod-old">R$ 549,90</span>
+          <span class="prod-discount">-45%</span>
+        </div>
+        <div class="prod-cta-wrap">
+          <button class="btn-add-prod" onclick="trackClick('trench-coat')">Comprar na Shein →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 — Bota Ankle Preta -->
+    <div class="prod-card reveal reveal-delay-3">
+      <div class="prod-img" style="background:#c5c5c5;position:relative;overflow:hidden">
+        <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=400&h=530&fit=crop&auto=format" alt="Bota Ankle Preta" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s ease">
+        <div class="prod-overlay"></div>
+        <span class="prod-badge sale">SALE</span>
+        <button class="prod-fav" aria-label="Favoritar"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="prod-info">
+        <div class="prod-name">Bota Ankle Preta</div>
+        <div class="prod-cat">Calçados · Botas</div>
+        <div class="prod-colors">
+          <div class="c-dot" style="background:#1A1A1A"></div>
+          <div class="c-dot" style="background:#6B4E2A"></div>
+        </div>
+        <div class="prod-prices">
+          <span class="prod-price">R$ 179,90</span>
+          <span class="prod-old">R$ 319,90</span>
+          <span class="prod-discount">-44%</span>
+        </div>
+        <div class="prod-cta-wrap">
+          <button class="btn-add-prod" onclick="trackClick('bota-ankle')">Comprar na Shein →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 — Moletom Creme -->
+    <div class="prod-card reveal reveal-delay-4">
+      <div class="prod-img" style="background:#e8e0d5;position:relative;overflow:hidden">
+        <img src="https://images.unsplash.com/photo-1578768079052-aa76e52ff62e?w=400&h=530&fit=crop&auto=format" alt="Moletom Creme" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s ease">
+        <div class="prod-overlay"></div>
+        <span class="prod-badge">HOT</span>
+        <button class="prod-fav" aria-label="Favoritar"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="prod-info">
+        <div class="prod-name">Moletom Creme</div>
+        <div class="prod-cat">Feminino · Moletons</div>
+        <div class="prod-colors">
+          <div class="c-dot" style="background:#E8E0D5"></div>
+          <div class="c-dot" style="background:#888888"></div>
+          <div class="c-dot" style="background:#1A1A1A"></div>
+        </div>
+        <div class="prod-prices">
+          <span class="prod-price">R$ 99,90</span>
+          <span class="prod-old">R$ 189,90</span>
+          <span class="prod-discount">-47%</span>
+        </div>
+        <div class="prod-cta-wrap">
+          <button class="btn-add-prod" onclick="trackClick('moletom-creme')">Comprar na Shein →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6 — Bota Stiletto Preta (PIECE 01) -->
+    <div class="prod-card reveal">
+      <div class="prod-img" style="background:#c8c8c8;position:relative;overflow:hidden">
+        <img src="https://images.unsplash.com/photo-1515347619252-60a4bf4fff4f?w=400&h=530&fit=crop&auto=format" alt="Bota Stiletto Preta" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s ease">
+        <div class="prod-overlay"></div>
+        <span class="prod-badge">NEW</span>
+        <button class="prod-fav" aria-label="Favoritar"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="prod-info">
+        <div class="prod-name">Bota Stiletto</div>
+        <div class="prod-cat">Calçados · Botas</div>
+        <div class="prod-colors">
+          <div class="c-dot" style="background:#1A1A1A"></div>
+          <div class="c-dot" style="background:#4A3728"></div>
+        </div>
+        <div class="prod-prices">
+          <span class="prod-price">R$ 239,90</span>
+          <span class="prod-old">R$ 429,90</span>
+          <span class="prod-discount">-44%</span>
+        </div>
+        <div class="prod-cta-wrap">
+          <button class="btn-add-prod" onclick="trackClick('bota-stiletto')">Comprar na Shein →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7 — Suéter Veludo Marrom (PIECE 02) -->
+    <div class="prod-card reveal reveal-delay-1">
+      <div class="prod-img" style="background:#a08060;position:relative;overflow:hidden">
+        <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=400&h=530&fit=crop&auto=format" alt="Suéter Veludo Marrom" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s ease">
+        <div class="prod-overlay"></div>
+        <span class="prod-badge">HOT</span>
+        <button class="prod-fav" aria-label="Favoritar"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="prod-info">
+        <div class="prod-name">Suéter Veludo</div>
+        <div class="prod-cat">Feminino · Suéteres</div>
+        <div class="prod-colors">
+          <div class="c-dot" style="background:#4A2E1A"></div>
+          <div class="c-dot" style="background:#1A1A1A"></div>
+          <div class="c-dot" style="background:#8B6A44"></div>
+        </div>
+        <div class="prod-prices">
+          <span class="prod-price">R$ 159,90</span>
+          <span class="prod-old">R$ 279,90</span>
+          <span class="prod-discount">-43%</span>
+        </div>
+        <div class="prod-cta-wrap">
+          <button class="btn-add-prod" onclick="trackClick('sueter-veludo')">Comprar na Shein →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8 — Jaqueta Xadrez Cinza (PIECE 03) -->
+    <div class="prod-card reveal reveal-delay-2">
+      <div class="prod-img" style="background:#b8b8b8;position:relative;overflow:hidden">
+        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&h=530&fit=crop&auto=format" alt="Jaqueta Xadrez" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s ease">
+        <div class="prod-overlay"></div>
+        <span class="prod-badge">NEW</span>
+        <button class="prod-fav" aria-label="Favoritar"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="prod-info">
+        <div class="prod-name">Jaqueta Xadrez</div>
+        <div class="prod-cat">Feminino · Jaquetas</div>
+        <div class="prod-colors">
+          <div class="c-dot" style="background:#888888"></div>
+          <div class="c-dot" style="background:#1A1A1A"></div>
+        </div>
+        <div class="prod-prices">
+          <span class="prod-price">R$ 199,90</span>
+          <span class="prod-old">R$ 369,90</span>
+          <span class="prod-discount">-46%</span>
+        </div>
+        <div class="prod-cta-wrap">
+          <button class="btn-add-prod" onclick="trackClick('jaqueta-xadrez')">Comprar na Shein →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9 — Saia Mini Cinza (PIECE 04) -->
+    <div class="prod-card reveal reveal-delay-3">
+      <div class="prod-img" style="background:#c0bebe;position:relative;overflow:hidden">
+        <img src="https://images.unsplash.com/photo-1583496661160-fb5218afa9a1?w=400&h=530&fit=crop&auto=format" alt="Saia Mini Cinza" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s ease">
+        <div class="prod-overlay"></div>
+        <span class="prod-badge sale">SALE</span>
+        <button class="prod-fav" aria-label="Favoritar"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="prod-info">
+        <div class="prod-name">Saia Mini Cinza</div>
+        <div class="prod-cat">Feminino · Saias</div>
+        <div class="prod-colors">
+          <div class="c-dot" style="background:#888888"></div>
+          <div class="c-dot" style="background:#1A1A1A"></div>
+          <div class="c-dot" style="background:#E8E8E8"></div>
+        </div>
+        <div class="prod-prices">
+          <span class="prod-price">R$ 89,90</span>
+          <span class="prod-old">R$ 169,90</span>
+          <span class="prod-discount">-47%</span>
+        </div>
+        <div class="prod-cta-wrap">
+          <button class="btn-add-prod" onclick="trackClick('saia-mini')">Comprar na Shein →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10 — Casaco Couro Preto (PIECE 08) -->
+    <div class="prod-card reveal reveal-delay-4">
+      <div class="prod-img" style="background:#3a3a3a;position:relative;overflow:hidden">
+        <img src="https://images.unsplash.com/photo-1548549557-dbe9155715db?w=400&h=530&fit=crop&auto=format" alt="Casaco Couro Preto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s ease">
+        <div class="prod-overlay"></div>
+        <span class="prod-badge">HOT</span>
+        <button class="prod-fav" aria-label="Favoritar"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="prod-info">
+        <div class="prod-name">Casaco Couro Preto</div>
+        <div class="prod-cat">Feminino · Casacos</div>
+        <div class="prod-colors">
+          <div class="c-dot" style="background:#1A1A1A"></div>
+          <div class="c-dot" style="background:#4A3728"></div>
+        </div>
+        <div class="prod-prices">
+          <span class="prod-price">R$ 349,90</span>
+          <span class="prod-old">R$ 629,90</span>
+          <span class="prod-discount">-44%</span>
+        </div>
+        <div class="prod-cta-wrap">
+          <button class="btn-add-prod" onclick="trackClick('casaco-couro')">Comprar na Shein →</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── PROMO BANNER ──────────────────── -->
+<section class="section-promo reveal" id="promo">
+  <div style="position:relative;z-index:2">
+    <div class="promo-tag">Oferta por tempo limitado</div>
+    <h2 class="promo-title">SALE<br>ATÉ 70%<br>OFF</h2>
+    <div class="promo-sub">Centenas de peças com desconto absurdo — só hoje.</div>
+    <div class="countdown">
+      <div class="cd-block">
+        <span class="cd-num" id="cd-h">--</span>
+        <span class="cd-label">Horas</span>
+      </div>
+      <span class="cd-sep">:</span>
+      <div class="cd-block">
+        <span class="cd-num" id="cd-m">--</span>
+        <span class="cd-label">Minutos</span>
+      </div>
+      <span class="cd-sep">:</span>
+      <div class="cd-block">
+        <span class="cd-num" id="cd-s">--</span>
+        <span class="cd-label">Segundos</span>
+      </div>
+    </div>
+    <div class="promo-coupon">CUPOM: FLASH70</div>
+    <br>
+    <button class="btn-primary" style="font-size:16px;padding:16px 40px" onclick="trackClick('promo-cta')">
+      Garantir Promoção →
+    </button>
+  </div>
+</section>
+
+<!-- ─── WHY US ─────────────────────────── -->
+<section class="section-why">
+  <div class="sec-header reveal">
+    <div>
+      <div class="sec-tag">Por que a DRIP?</div>
+      <h2 class="sec-title">Compra simples,<br>resultado garantido.</h2>
+    </div>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <div class="why-icon">
+        <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      </div>
+      <div class="why-name">Frete Grátis</div>
+      <div class="why-desc">Em pedidos acima de R$ 199. Entrega rápida para todo o Brasil.</div>
+    </div>
+    <div class="why-card reveal reveal-delay-1">
+      <div class="why-icon">
+        <svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.2"/></svg>
+      </div>
+      <div class="why-name">Troca Fácil</div>
+      <div class="why-desc">30 dias para trocar ou devolver. Sem burocracia, sem estresse.</div>
+    </div>
+    <div class="why-card reveal reveal-delay-2">
+      <div class="why-icon">
+        <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      </div>
+      <div class="why-name">Pague em 6x</div>
+      <div class="why-desc">Parcele sem juros com todos os principais cartões de crédito.</div>
+    </div>
+    <div class="why-card reveal reveal-delay-3">
+      <div class="why-icon">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <div class="why-name">Curadoria</div>
+      <div class="why-desc">Cada peça foi selecionada por stylists. Você só vê o melhor da Shein.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BIG TYPE SECTION ──────────────── -->
+<section class="section-bigtype">
+  <div class="bigtype-bg"></div>
+  <div class="bigtype-text reveal">DRIP</div>
+  <div class="bigtype-text reveal" style="padding-top:0">MODA</div>
+  <div class="bigtype-sub reveal" style="padding-top:30px">
+    <div style="font-family:var(--font-d);font-weight:700;font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:var(--w45);margin-bottom:20px">Curadoria · Estilo · Atitude</div>
+    <button class="btn-outline" style="margin:0 auto" onclick="document.getElementById('colecoes').scrollIntoView({behavior:'smooth'})">Explorar Coleções →</button>
+  </div>
+  <div class="bigtype-models">
+    <div class="model-block" style="width:110px;height:190px;background:linear-gradient(180deg,#7A9BAD 0%,#5A7F94 100%)"></div>
+    <div class="model-block" style="width:110px;height:220px;background:linear-gradient(180deg,#8AAFC0 0%,#6B96AC 100%);margin-top:-15px"></div>
+    <div class="model-block" style="width:110px;height:200px;background:linear-gradient(180deg,#96BAC8 0%,#78A0B2 100%);margin-top:-5px"></div>
+    <div class="model-block" style="width:110px;height:180px;background:linear-gradient(180deg,#6B90A4 0%,#4D7286 100%)"></div>
+    <div class="model-block" style="width:110px;height:210px;background:linear-gradient(180deg,#86A8B8 0%,#6590A4 100%);margin-top:-10px"></div>
+  </div>
+</section>
+
+<!-- ─── NEWSLETTER ─────────────────────── -->
+<section class="section-news reveal">
+  <div class="news-gift">🎁 Ganhe 15% na primeira compra</div>
+  <h2 class="news-title">FIQUE POR<br>DENTRO.</h2>
+  <p class="news-sub">Inscreva-se e receba tendências exclusivas, drops especiais e ofertas antes de todo mundo.</p>
+  <div class="news-form">
+    <input type="email" class="news-input" placeholder="seu@email.com" aria-label="E-mail">
+    <button class="news-btn" onclick="subscribeNewsletter(this)">Inscrever →</button>
+  </div>
+  <p class="news-note">*Cupom <strong>NOVO15</strong> enviado por e-mail após confirmação.</p>
+</section>
+
+<!-- ─── FOOTER ─────────────────────────── -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">DRIP.</div>
+      <p class="footer-bio">Curadoria de moda jovem e descolada. Selecionamos as melhores peças da Shein para você — mais estilo, menos trabalho.</p>
+      <div style="margin-top:16px">
+        <span class="footer-badge">🔒 Site Seguro</span>
+        <span class="footer-badge">✓ Afiliado Shein</span>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Categorias</div>
+      <ul class="footer-links">
+        <li><a href="#">New In</a></li>
+        <li><a href="#">Feminino</a></li>
+        <li><a href="#">Masculino</a></li>
+        <li><a href="#">Beleza</a></li>
+        <li><a href="#">Acessórios</a></li>
+        <li><a href="#">Sale</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Atendimento</div>
+      <ul class="footer-links">
+        <li><a href="#">Trocas e devoluções</a></li>
+        <li><a href="#">Frete e prazo</a></li>
+        <li><a href="#">Guia de tamanhos</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Contato via WhatsApp</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Siga a DRIP</div>
+      <div class="footer-socials">
+        <div class="footer-soc" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/><path d="M12 6.865a5.135 5.135 0 1 0 0 10.27 5.135 5.135 0 0 0 0-10.27zm0 8.468a3.333 3.333 0 1 1 0-6.666 3.333 3.333 0 0 1 0 6.666zm5.338-9.87a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/></svg>
+        </div>
+        <div class="footer-soc" aria-label="TikTok">
+          <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.75a8.29 8.29 0 0 0 4.83 1.53V6.82a4.85 4.85 0 0 1-1.06-.13z"/></svg>
+        </div>
+        <div class="footer-soc" aria-label="Pinterest">
+          <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+        </div>
+        <div class="footer-soc" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="var(--bg-deeper)" stroke="none"/></svg>
+        </div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#">@drip.moda</a></li>
+        <li><a href="#">Política de Privacidade</a></li>
+        <li><a href="#">Termos de Uso</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 DRIP. Todos os direitos reservados.</span>
+    <span class="footer-affiliate">Site afiliado oficial da Shein · Ao comprar, você pode nos ajudar com uma comissão.</span>
+  </div>
+</footer>
+
+<script>
+/* ─── COUNTDOWN TIMER ── */
+function updateCountdown() {
+  var now = new Date();
+  var midnight = new Date(now);
+  midnight.setHours(24, 0, 0, 0);
+  var diff = midnight - now;
+  var h = Math.floor(diff / 3600000);
+  var m = Math.floor((diff % 3600000) / 60000);
+  var s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+  document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+  document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+/* ─── SCROLL REVEAL ── */
+var revealObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(function(el) {
+  revealObserver.observe(el);
+});
+
+/* ─── SIZE SELECTION ── */
+document.querySelectorAll('.sz').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    this.closest('.size-row').querySelectorAll('.sz').forEach(function(b){ b.classList.remove('active'); });
+    this.classList.add('active');
+  });
+});
+
+/* ─── COLOUR SELECTION ── */
+document.querySelectorAll('.cl').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    this.closest('.colour-row').querySelectorAll('.cl').forEach(function(b){ b.classList.remove('active'); });
+    this.classList.add('active');
+  });
+});
+
+/* ─── THUMBNAIL SELECTION ── */
+document.querySelectorAll('.hero-thumb').forEach(function(t) {
+  t.addEventListener('click', function() {
+    document.querySelectorAll('.hero-thumb').forEach(function(x){ x.classList.remove('active'); });
+    this.classList.add('active');
+  });
+});
+
+/* ─── AFFILIATE CLICK TRACKING ── */
+function trackClick(productId) {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'affiliate_click', { product_id: productId });
+  }
+  /* Aqui: redireciona para link afiliado real da Shein */
+  /* window.open('SEU_LINK_AFILIADO_' + productId, '_blank'); */
+  alert('Redirecionando para a Shein...\n\n(Substitua esta linha pelo seu link afiliado real)');
+}
+
+/* ─── NEWSLETTER ── */
+function subscribeNewsletter(btn) {
+  var input = btn.previousElementSibling;
+  var email = input.value.trim();
+  if (!email || !email.includes('@')) {
+    input.style.borderColor = '#EF4444';
+    setTimeout(function(){ input.style.borderColor = ''; }, 2000);
+    return;
+  }
+  btn.textContent = '✓ Inscrito!';
+  btn.style.background = 'rgba(255,255,255,.6)';
+  btn.disabled = true;
+  input.disabled = true;
+}
+
+/* ─── CART COUNT ── */
+var cartCount = 0;
+document.querySelectorAll('.btn-add-prod').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    cartCount++;
+    var badge = document.querySelector('.cart-badge');
+    if (badge) badge.textContent = cartCount;
+  });
+});
+</script>
+</body>
+</html>
